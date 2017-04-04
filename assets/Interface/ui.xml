@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    <screen id="start" controller="mygame.Arkanoid">
+        <layer height="100" width="100" childLayout="center" backgroundImage="Interface/wood.jpg">   
+            <text height="60%" width="15%" font="Interface/Fonts/Arkanoid.fnt" color="#ffffff" text="Arkanoid" align="center" textHAlign="center" textVAlign="top"/>
+            <control height="15%" width="28%" name="button" label="Start" id="StartButton" align="center">
+                <interact onClick="next()"/>            
+            </control>
+            <text height="15%" width="28%" font="Interface/Fonts/Start.fnt" color="#ffffff" text="Start Game" align="center" valign="center" backgroundColor="#819fb6"/>
+        </layer>
+    </screen> 
+    <screen id="keymap" controller="mygame.Arkanoid">
+        <layer childLayout="center" backgroundImage="Interface/wall.jpg"> 
+             <panel height="100%" width="100%" align="center" valign="center" childLayout="vertical">
+                <text height="10%" font="Interface/Fonts/Start.fnt" color="#000000" text="Game Control:" align="left" vlign="top"/>
+                <text height="10%" font="Interface/Fonts/Arial.fnt" color="#000000" text="1. Press LEFT or RIGHT to rotate the arrow." align="left"/>
+                <text height="10%" font="Interface/Fonts/Arial.fnt" color="#000000" text="2. Press SPACE to confirm the selection." align="left"/>
+                <text height="10%" font="Interface/Fonts/Arial.fnt" color="#000000" text="3. Press LEFT or RIGHT to move the paddle." align="left"/>
+                <text height="10%" font="Interface/Fonts/Arial.fnt" color="#000000" text="4. press X to release the boom if you have one." align="left"/>
+                <text height="10%" font="Interface/Fonts/Arial.fnt" color="#000000" text="5. press P to pause or resume the game." align="left"/>
+                <text height="10%" font="Interface/Fonts/Arial.fnt" color="#000000" text="6. press Z to pass the current level." align="left"/>
+            </panel> 
+            <panel height="15%" width="28%" align="right" valign="bottom" childLayout="center">
+                <control height="100%" width="100%" name="button" label="Start" id="StartButton" align="center">
+                    <interact onClick="startGame()"/>            
+                </control>
+                <text height="100%" width="100%" font="Interface/Fonts/Start.fnt" color="#ffffff" text="Continue" align="center" valign="center" backgroundColor="#819fb6"/>
+            </panel>
+        </layer>
+    </screen> 
+    <screen id="levelUp" controller="mygame.Arkanoid">
+        <layer childLayout="center" backgroundColor="#ffffff">
+            <text id="level" height="35%" width="100%" font="Interface/Fonts/Arkanoid.fnt" color="#000000" text="to be modified" align="center" valign="center"/>
+        </layer>
+    </screen>
+    <screen id="playing" controller="mygame.Arkanoid"> 
+    </screen>  
+    <screen id="lose" childLayout="center" controller="mygame.Arkanoid">
+        <layer childLayout="vertical" backgroundImage="Interface/wood.jpg">
+            <text height="30%" width="15%" font="Interface/Fonts/Arkanoid.fnt" color="#ffffff" text="You lost!" align="center" valign="center"/>
+            <panel  height="50%" width="15%" childLayout="center" align="center" valign="center">
+                <text font="Interface/Fonts/Start.fnt" id="score" color="#ffffff" text="Score" align="center" valign="center"/>
+                <control name="button" label="Quit" id="QuitButton" align="center" valign="center" >
+                    <interact onClick="quitGame()"/>            
+                </control>
+                <text font="Interface/Fonts/Start.fnt" color="#000000" text="Quit" backgroundColor="#819fb6" align="center" valign="bottom"/>
+            </panel>
+        </layer>
+    </screen>   
+    <screen id="win" childLayout="center" controller="mygame.Arkanoid">
+        <layer childLayout="vertical" backgroundImage="Interface/win.jpg">
+            <text height="30%" width="15%" font="Interface/Fonts/Arkanoid.fnt" color="#000000" text="You won!" align="center" valign="center"/>
+            <panel  height="50%" width="15%" childLayout="center" align="center" valign="center">
+                <text font="Interface/Fonts/Start.fnt" id="score" color="#000000" text="Score" align="center" valign="center"/>
+                <control name="button" label="Quit" id="QuitButton" align="center" valign="center" >
+                    <interact onClick="quitGame()"/>            
+                </control>
+                <text font="Interface/Fonts/Start.fnt" color="#000000" text="Quit" backgroundColor="#819fb6" align="center" valign="bottom"/>
+            </panel>
+        </layer>
+    </screen> 
+</nifty>
